@@ -6,35 +6,20 @@
 		"ios": "2.2081",
 		"android": "2.2081"
 	},
-	"id": "teamtcm.geometry-dash-odyssey",
-	"name": "Geometry Dash: Odyssey",
-	"version": "v1.1.2",
+	"id": "roadhogstudios.odysseyvisualworks",
+	"name": "2Point3 Visualworks",
+	"version": "v1.0.0",
 	"developers": [
+		"RoadHogStudios",
 		"Team TCM",
 		"Chumiiu",
 		"Cypher",
 		"ML500"
 	],
-	"description": "A fanmade spin-off!",
+	"description": "Some Spinoff Personality!",
 	"early-load": true,
 	"dependencies": {
 		"geode.node-ids": "1.22.0"
-	},
-	"incompatibilities": {
-		"capeling.geometry-dash-lunar": ">=1.0.0",
-		"chumiiu.geometry_dash_time_reborn": ">=1.0.0",
-		"itzkiba.better_progression": ">=1.0.0",
-		"gdutilsdevs.gdutils": ">=1.0.0",
-		"dankmeme.globed2": ">=1.0.0",
-		"bitz.hard_mode": ">=1.0.0",
-		"ninxout.redash": ">=1.0.0",
-		"alphalaneous.alphas_geode_utils": {
-			"version": ">=1.0.0",
-			"platforms": [
-				"android",
-				"ios"
-			]
-		}
 	},
 	"settings": {
 		"options-title": {
@@ -95,22 +80,9 @@
 		}
 	},
 	"resources": {
-		"spritesheets": {
-			"GDO_GameSheet01": [
-				"resources/OdysseySheet/*.png"
-			],
-			"GDO_SecretSheet": [
-				"resources/VaultSheet/*.png"
-			]
-		},
 		"files": [
-			"resources/HollowVoicelines/*.mp3",
-			"resources/Soundtrack/*.mp3",
-			"resources/Dialogs/*.json",
-			"resources/Levels/*.txt",
 			"resources/Icons/*.plist",
-			"resources/Icons/*.png",
-			"resources/*.zip"
+			"resources/Icons/*.png"
 		],
 		"sprites": [
 			"resources/*.png",
