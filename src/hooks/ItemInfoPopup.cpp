@@ -12,20 +12,7 @@ class $modify(GDOItemInfoPopup, ItemInfoPopup)
             return false;
 
         int type = static_cast<int>(p1);
-
-        if (IconUtils::isIconCustom(p0, GameManager::sharedState()->unlockTypeToIconType(static_cast<int>(p1))))
-        {
-            auto winSize = CCDirector::sharedDirector()->getWinSize();
-            auto popupSize = m_mainLayer->getChildByID("background")->getContentSize();
-
-            auto odysseyLabel = CCSprite::createWithSpriteFrameName("OdysseyLabel_001.png"_spr);
-            odysseyLabel->setPosition({winSize.width / 2 - popupSize.width / 2 + 44, winSize.height / 2 + popupSize.height / 2 - 28});
-            odysseyLabel->setID("odyssey-label"_spr);
-            odysseyLabel->setScale(0.70f);
-
-            m_mainLayer->addChild(odysseyLabel);
-        }
-
+    
         //  log::info("{}", type);
 
         if (type >= 900)
@@ -54,28 +41,7 @@ class $modify(GDOItemInfoPopup, ItemInfoPopup)
                 descriptionString = fmt::format("This <cg>{}</c> is <cl>unlocked</c> by default.", iconName);
                 titleString = "Default";
             }
-
-            //  This icon comes from Carp's Shop
-            if (IconUtils::isIconCustom(p0, GameManager::sharedState()->unlockTypeToIconType(static_cast<int>(p1))) && GameStatsManager::sharedState()->getItemUnlockState(p0, p1) == 5)
-            {
-                descriptionString = fmt::format("You can <cl>buy</c> this <cg>{}</c> in the <cd>Carp's shop</c>!", iconName);
-                titleString = "Carp's Shop";
-            }
-
-            //  Icon is for a future update
-            if (IconUtils::isIconCustom(p0, GameManager::sharedState()->unlockTypeToIconType(static_cast<int>(p1))) && GameStatsManager::sharedState()->getItemUnlockState(p0, p1) == 6)
-            {
-                descriptionString = fmt::format("This <cg>{}</c> can be <cl>unlocked</c> in update <cy>2.0</c>.", iconName);
-                titleString = "Coming Soon";
-            }
-
-            //  Icon is from a chest
-            if (IconUtils::isIconCustom(p0, GameManager::sharedState()->unlockTypeToIconType(static_cast<int>(p1))) && GameStatsManager::sharedState()->getItemUnlockState(p0, p1) == 7)
-            {
-                descriptionString = fmt::format("You can <cl>get</c> this <cg>{}</c> from a <cy>Special Chest</c>.", iconName);
-                titleString = "Special Reward";
-            }
-
+            
             if (auto descriptionArea = static_cast<TextArea *>(m_mainLayer->getChildByID("description-area")))
                 descriptionArea->setString(descriptionString);
 
