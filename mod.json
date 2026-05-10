@@ -36,47 +36,6 @@
 				"win",
 				"android"
 			]
-		},
-		"keybinds-title": {
-			"type": "title",
-			"name": "Keybind Settings",
-			"platforms": [
-				"mac",
-				"win"
-			]
-		},
-		"keybind-comic-next-page": {
-			"type": "keybind",
-			"name": "Next Page (Comics)",
-			"description": "<cy>**ENGLISH**</c>: The keybind to move to the next page in the comics.\n***\n<cy>**SPANISH**</c>: La combinacion de teclas para mover a la pagina siguiente en los comics.",
-			"default": [
-				"Right"
-			],
-			"platforms": [
-				"mac",
-				"win"
-			]
-		},
-		"keybind-comic-prev-page": {
-			"type": "keybind",
-			"name": "Previous Page (Comics)",
-			"description": "<cy>**ENGLISH**</c>: The keybind to move to the previous page in the comics.\n***\n<cy>**SPANISH**</c>: La combinacion de teclas para mover a la pagina anterior en los comics.",
-			"default": [
-				"Left"
-			],
-			"platforms": [
-				"mac",
-				"win"
-			]
-		},
-		"danger-title": {
-			"type": "title",
-			"name": "Danger Zone",
-			"description": "<cy>**ENGLISH**</c>:\nThe following setting is if you want to <cr>delete your save data</c> of Geometry Dash Odyssey, only confirm if you 100% want a full restart of the fangame.\n***\n<cy>**SPANISH**</c>:\nEl siguiente setting es si deseas <cr>borrar los datos</c> de Geometry Dash Odyssey, solamente confirma si estas 100% en querer un reinicio total del fangame."
-		},
-		"delete-data": {
-			"type": "custom:delete-data-button",
-			"name": "erase data"
 		}
 	},
 	"spritesheets": {
