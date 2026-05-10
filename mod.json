@@ -52,7 +52,6 @@
 		"sprites": [
 			"resources/*.png",
 			"resources/temp/*.png",
-			"resources/*.zip",
 			"resources/sprites/*.png"
 		]
 	},
