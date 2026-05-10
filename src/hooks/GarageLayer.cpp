@@ -1,7 +1,6 @@
 #include <Geode/Geode.hpp>
 #include <Geode/binding/CCMenuItemToggler.hpp>
 #include <Geode/modify/GJGarageLayer.hpp>
-#include "../layers/OdysseySelectLayer.hpp"
 #include "../utils/IconUtils.hpp"
 
 using namespace geode::prelude;
@@ -21,17 +20,6 @@ class $modify(GDOGarageLayer, GJGarageLayer)
         auto gm = GameManager::get();
 
         m_playerObject->updatePlayerFrame(IconUtils::currentVehicleID(), gm->m_playerIconType);
-
-        auto menu = getChildByID("shards-menu");
-
-        if (auto shards = menu->getChildByID("shards-button"))
-            shards->setVisible(false);
-
-        if (auto paint = menu->getChildByID("color-button"))
-            paint->setPositionY(paint->getPositionY() + 25);
-
-        if (auto shopButton = getChildByID("top-left-menu")->getChildByID("shop-button"))
-            shopButton->setVisible(false);
 
 #ifndef GEODE_IS_IOS
 
