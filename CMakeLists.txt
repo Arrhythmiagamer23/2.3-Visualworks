@@ -10,17 +10,23 @@ endif()
 
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-project(GeometryDashOdyssey VERSION 1.0.0)
-
-option(DEV_MODE "Developer Mode" OFF)
-
-if(DEV_MODE)
-    add_compile_definitions(DEVELOPER_MODE=0)
-endif()
+project(here)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
+include_directories(src)
+
+# httplib idi nahui
+target_compile_definitions(${PROJECT_NAME} PRIVATE 
+    WIN32_LEAN_AND_MEAN
+    _WINSOCK_DEPRECATED_NO_WARNINGS
+)
+
+target_compile_options(${PROJECT_NAME} PRIVATE 
+-Wno-implicit-const-int-float-conversion 
+-Wno-undefined-bool-conversion
+)
 
 if (NOT DEFINED ENV{GEODE_SDK})
     message(FATAL_ERROR "Unable to find Geode SDK! Please define GEODE_SDK environment variable to point to Geode")

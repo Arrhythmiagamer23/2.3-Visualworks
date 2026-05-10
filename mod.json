@@ -29,7 +29,7 @@
 		"hide-custom": {
 			"type": "bool",
 			"name": "Hide Custom Gamemodes",
-			"description": "<cy>**ENGLISH**</c>: Hides the icon kit buttons for the custom gamemodes.\n***\n<cy>**SPANISH**</c>: En el Icon Kit, oculta los botones de los gamemodes personalizados.",
+			"description": "Hides the icon kit buttons for the custom gamemodes.",
 			"default": false,
 			"platforms": [
 				"mac",
@@ -38,15 +38,16 @@
 			]
 		}
 	},
-	"spritesheets": {
+	"resources": {
+		"spritesheets": {
 			"GDO_GameSheet01": [
 				"resources/OdysseySheet/*.png"
 			]
 		},
-	"resources": {
 		"files": [
 			"resources/Icons/*.plist",
-			"resources/Icons/*.png"
+			"resources/Icons/*.png",
+			"resources/OdysseySheet/*.png"
 		],
 		"sprites": [
 			"resources/*.png",
