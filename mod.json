@@ -52,7 +52,8 @@
 		"sprites": [
 			"resources/*.png",
 			"resources/temp/*.png",
-			"resources/*.zip"
+			"resources/*.zip",
+			"resources/sprites/*.png"
 		]
 	},
 	"links": {
