@@ -1,6 +1,5 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/GameManager.hpp>
-#include "../utils/Utils.hpp"
 #include "../utils/IconUtils.hpp"
 
 using namespace geode::prelude;
@@ -10,30 +9,30 @@ class $modify(OdysseyGameManager, GameManager)
     void firstLoad()
     {
         GameManager::firstLoad();
-    };
+    }
 
     int countForType(IconType icon)
     {
         switch (icon)
         {
         case IconType::Cube:
-            return 485
+            return 485;
         case IconType::Ship:
-            return 169
+            return 169;
         case IconType::Ball:
-            return 118
+            return 118l;
         case IconType::Ufo:
-            return 149
+            return 149;
         case IconType::Wave:
-            return 96
+            return 96;
         case IconType::Robot:
             return 68;
         case IconType::Spider:
             return 69;
         case IconType::Swing:
-            return 43
+            return 43;
         case IconType::Jetpack:
-            return 8
+            return 8;
         case IconType::Special:
             return 7;
         case IconType::DeathEffect:

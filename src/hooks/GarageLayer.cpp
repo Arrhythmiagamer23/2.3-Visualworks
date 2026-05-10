@@ -191,44 +191,4 @@ class $modify(GDOGarageLayer, GJGarageLayer)
             }
         }
     }
-
-    void onCustomSelect(CCObject *sender)
-    {
-        auto icon = static_cast<IconType>(sender->getTag());
-        auto iconUnlock = static_cast<UnlockType>(sender->getTag());
-
-        m_playerObject->updatePlayerFrame(1, icon);
-
-        ItemInfoPopup::create(1, iconUnlock)->show();
-    }
-
-    void onBack(CCObject *sender)
-    {
-        if (GameManager::sharedState()->getIntGameVariable("1001") > 0)
-        {
-            auto director = CCDirector::sharedDirector();
-            auto winSize = director->getWinSize();
-
-            this->retain();
-            this->removeFromParentAndCleanup(false);
-
-            auto selectLayer = OdysseySelectLayer::scene(GameManager::sharedState()->getIntGameVariable("1001") - 1);
-            director->replaceScene(selectLayer);
-            selectLayer->addChild(this, 1000);
-
-            this->release();
-
-            auto moveTo = CCMoveTo::create(0.3f, ccp(0, winSize.height));
-            auto easeIn = CCEaseIn::create(moveTo, 2.0f);
-            auto callFunc = CCCallFunc::create(this, callfunc_selector(GJGarageLayer::removeFromParent));
-
-            auto ccSeq = CCSequence::create(easeIn, callFunc, 0);
-            this->runAction(ccSeq);
-            setKeyboardEnabled(false);
-            setKeypadEnabled(false);
-            return;
-        }
-
-        GJGarageLayer::onBack(sender);
-    }
 };

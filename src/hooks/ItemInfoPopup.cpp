@@ -1,6 +1,5 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/ItemInfoPopup.hpp>
-#include "../utils/IconUtils.hpp"
 
 using namespace geode::prelude;
 
@@ -27,30 +26,6 @@ class $modify(GDOItemInfoPopup, ItemInfoPopup)
 
             player->setPosition(itemIcon->getContentSize() / 2);
             itemIcon->addChild(player);
-        }
-
-        if (GameStatsManager::sharedState()->getItemUnlockState(p0, p1) != 1)
-        {
-            std::string iconName = nameForUnlockType(p0, p1);
-
-            //  Default Icons
-            if ((p1 == UnlockType::Cube && p0 <= 4) || p0 == 1 || ((p1 == UnlockType::Col1 || p1 == UnlockType::Col2) && p0 <= 3))
-            {
-                descriptionString = fmt::format("This <cg>{}</c> is <cl>unlocked</c> by default.", iconName);
-                titleString = "Default";
-            }
-        }
-        else
-        {
-            if (IconUtils::isIconSecret(p0, GameManager::sharedState()->unlockTypeToIconType(static_cast<int>(p1))))
-            {
-                if (auto descriptionArea = static_cast<TextArea *>(m_mainLayer->getChildByID("description-area")))
-                {
-                    std::string iconName = nameForUnlockType(p0, p1);
-                    std::string descriptionString = fmt::format("A <cy>secret</c> is required to <cl>unlock</c> this <cg>{}</c>!", iconName);
-                    descriptionArea->setString(descriptionString);
-                }
-            }
         }
 
         return true;
