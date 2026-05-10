@@ -32,8 +32,6 @@ class $modify(GDOItemInfoPopup, ItemInfoPopup)
         if (GameStatsManager::sharedState()->getItemUnlockState(p0, p1) != 1)
         {
             std::string iconName = nameForUnlockType(p0, p1);
-            const char *titleString = "Full version";
-            std::string descriptionString = fmt::format("You can <cl>get</c> this <cg>{}</c> in the full version of <cy>Geometry Dash</c>!", iconName);
 
             //  Default Icons
             if ((p1 == UnlockType::Cube && p0 <= 4) || p0 == 1 || ((p1 == UnlockType::Col1 || p1 == UnlockType::Col2) && p0 <= 3))
@@ -41,12 +39,6 @@ class $modify(GDOItemInfoPopup, ItemInfoPopup)
                 descriptionString = fmt::format("This <cg>{}</c> is <cl>unlocked</c> by default.", iconName);
                 titleString = "Default";
             }
-            
-            if (auto descriptionArea = static_cast<TextArea *>(m_mainLayer->getChildByID("description-area")))
-                descriptionArea->setString(descriptionString);
-
-            if (auto achievementLabel = static_cast<CCLabelBMFont *>(m_mainLayer->getChildByID("achievement-label")))
-                achievementLabel->setString(titleString);
         }
         else
         {
