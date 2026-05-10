@@ -79,6 +79,11 @@
 			"name": "erase data"
 		}
 	},
+	"spritesheets": {
+			"GDO_GameSheet01": [
+				"resources/OdysseySheet/*.png"
+			]
+		},
 	"resources": {
 		"files": [
 			"resources/Icons/*.plist",
