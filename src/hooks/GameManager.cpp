@@ -1,5 +1,6 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/GameManager.hpp>
+#include "../utils/Utils.hpp"
 #include "../utils/IconUtils.hpp"
 
 using namespace geode::prelude;'
