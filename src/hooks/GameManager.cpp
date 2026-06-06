@@ -3,7 +3,7 @@
 #include "../utils/Utils.hpp"
 #include "../utils/IconUtils.hpp"
 
-using namespace geode::prelude;'
+using namespace geode::prelude;
 
 enum class CustomIcons
 {
